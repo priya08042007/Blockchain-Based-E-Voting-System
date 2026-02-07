@@ -1,0 +1,219 @@
+/* ===============================
+   GLOBAL RESET & BODY
+   =============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f6f7f5; /* Light neutral background from Shopify theme */
+    color: #1e2a26; /* Dark greenish text */
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a4d2e; /* Shopify green-inspired color */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+.nav-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ===============================
+   IMAGE SLIDER
+   =============================== */
+.slider {
+    overflow: hidden;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(2 * 100%); /* double the width for duplicated slides */
+    animation: scroll 20s linear infinite;
+}
+
+.slide-track img {
+    width: 250px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+/* Smooth continuous scroll */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* moves exactly half the track */
+}
+
+
+/* ===============================
+   INFO STRIP
+   =============================== */
+.info-strip {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 200px;
+}
+
+.info-card img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #1e2a26;
+    font-size: 0.95rem;
+}
+
+/* ===============================
+   MAIN CONTAINER
+   =============================== */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #1a4d2e; /* dark green heading */
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #3c6e57; /* lighter green */
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* ===============================
+   INPUTS & BUTTONS
+   =============================== */
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #1a4d2e; /* green button */
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #cdb901; /* lighter green on hover */
+}
+
+/* ===============================
+   ERROR MESSAGES
+   =============================== */
+.error {
+    color: #d93025;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   CANDIDATE LIST (vote.html)
+   =============================== */
+#candidateList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.candidate-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #f8faf8;
+}
+
+.candidate-card:hover {
+    background: #e6f0e8;
+}
+
+#camera-section {
+    text-align: center;
+}
+
+.camera-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ centers camera + buttons */
+    gap: 12px;
+    margin-top: 15px;
+}
+
+#cameraFeed {
+    display: none;         /* JS will toggle this */
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.camera-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#voteButton {
+    display: block;
+    margin: 20px auto;   /* centers horizontally */
+}
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Candidates</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+        <span class="nav-title">Election Commission</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="voting-control.html">Voting Control</a>
+        <a href="add-candidate.html">Add Candidate</a>
+        <a href="add-party.html">Add Party</a>
+        <a href="view-candidates.html">View Candidates</a>
+        <a href="view-party.html">View Parties</a>
+        <a href="results.html">Results</a>
+    </div>
+</nav>
+
+<!-- MAIN CONTAINER -->
+<div class="three-column-layout">
+
+    <!-- 🔹 LEFT: CANDIDATE INFORMATION -->
+    <aside class="panel info-panel">
+        <h2>About Candidates</h2>
+        <p>
+            Candidates are individuals who contest in elections to represent
+            voters in democratic institutions. Their details must be accurately
+            recorded to ensure a fair and transparent election process.
+        </p>
+
+        <h3>Purpose of Candidate Listing</h3>
+        <ul>
+            <li>Displays registered candidates for verification</li>
+            <li>Ensures transparency in election preparation</li>
+            <li>Helps administrators audit candidate data</li>
+        </ul>
+
+        <h3>Candidate Verification</h3>
+        <p>
+            All listed candidates are verified by the election administrator
+            before being stored on the blockchain.
+        </p>
+
+        <h3>Blockchain Integrity</h3>
+        <p>
+            Candidate records are immutable and tamper-proof once registered.
+        </p>
+
+        <h3>Polling Booth Mapping</h3>
+        <ul>
+            <li>Each candidate is linked to a specific booth</li>
+            <li>Ensures correct vote allocation</li>
+            <li>Prevents misrepresentation</li>
+        </ul>
+    </aside>
+
+    <!-- 🔹 CENTER: SEARCH + TABLE -->
+    <main class="panel main-panel">
+        <h2>View Candidates</h2>
+
+        <p id="wallet-status" class="wallet-status">Checking wallet...</p>
+
+        <input id="searchBoothId" placeholder="Enter Booth ID">
+        <button id="viewBtn" onclick="viewCandidates()">🔍 View</button>
+
+        <!-- 🔽 TABLE MOVED HERE -->
+        <div class="candidate-table-wrapper" style="margin-top:20px;">
+            <h3 class="candidate-table-title">Registered Candidates</h3>
+
+            <table class="candidate-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Candidate Name</th>
+                        <th>Party</th>
+                        <th>Symbol</th>
+                        <th>Constituency</th>
+                    </tr>
+                </thead>
+                <tbody id="candidatesTableBody">
+                    <!-- Filled dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 🔹 RIGHT: IMPORTANT LINKS -->
+    <aside class="panel links-panel">
+        <h2>Important Voting Links</h2>
+
+        <ul class="links-list">
+            <li><a href="https://eci.gov.in" target="_blank">Election Commission of India</a></li>
+            <li><a href="https://voterportal.eci.gov.in" target="_blank">Voter Registration Portal</a></li>
+            <li><a href="https://nvsp.in" target="_blank">National Voters’ Service Portal</a></li>
+            <li><a href="https://eci.gov.in/faqs" target="_blank">Voting Rules & FAQs</a></li>
+            <li><a href="https://eci.gov.in/complaint" target="_blank">Voter Grievance Redressal</a></li>
+        </ul>
+
+        <h3>Why These Links?</h3>
+        <p>
+            Official sources ensure accurate and legally valid election
+            information.
+        </p>
+    </aside>
+
+</div>
+
+<!-- ETHERS + SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>

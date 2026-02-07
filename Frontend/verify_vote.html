@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Vote</title>
+    <link rel="stylesheet" href="verify_vote.css">
+</head>
+
+<body>
+
+    <div class="vote-container">
+        <h1>🔐 Verify Your Vote</h1>
+
+        <!-- FACE AUTH SECTION -->
+        <div id="faceSection">
+            <img class="camera" alt="Camera Feed">
+
+
+            <button onclick="verifyFace()">🧑 Authenticate Face</button>
+            <button onclick="stopCamera()">⛔ Stop Camera</button>
+
+            <p id="faceStatus" class="status"></p>
+        </div>
+
+        <!-- HASH KEY SECTION -->
+        <div id="hashSection" class="hidden">
+            <input type="text" id="hashInput" placeholder="Enter Transaction Hash (0x...)" autocomplete="off" />
+            <button onclick="verifyVote()">🔑 Verify Hash</button>
+            <p id="verifyResult" class="status"></p>
+
+            <p id="hashStatus" class="status"></p>
+        </div>
+
+        <!-- VOTE DETAILS -->
+        <div id="voteDetails" class="hidden">
+            <div class="vote-card">
+                <div class="row"><span>Candidate</span><strong id="candidate"></strong></div>
+                <div class="row"><span>Party</span><strong id="party"></strong></div>
+                <div class="row"><span>Polling Booth</span><strong id="booth"></strong></div>
+            </div>
+
+            <button onclick="goBack()">⬅ Back</button>
+        </div>
+    </div>
+
+    <script src="verify_vote.js"></script>
+</body>
+
+</html>

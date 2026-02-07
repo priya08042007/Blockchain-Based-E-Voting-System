@@ -1,0 +1,263 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #ffffff);
+    min-height: 100vh;
+}
+
+/* =========================================================
+   COMMON BUTTONS
+========================================================= */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 10px 14px;
+}
+
+button.primary {
+    background: #2e7d32;
+    color: white;
+}
+
+button.primary:hover {
+    background: #1b5e20;
+}
+
+button.danger {
+    background: #c62828;
+    color: white;
+}
+
+button.danger:hover {
+    background: #8e0000;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+/* =========================================================
+   BLO LOGIN PAGE (BLO.html)
+========================================================= */
+.blo-container {
+    background: white;
+    width: 360px;
+    margin: 120px auto;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.blo-container h1 {
+    text-align: center;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.blo-container .subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.blo-container label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.blo-container button {
+    width: 100%;
+    margin-top: 20px;
+    background: #2e7d32;
+    color: white;
+}
+
+.blo-container button:hover {
+    background: #1b5e20;
+}
+
+.error {
+    margin-top: 15px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+/* =========================================================
+   BLO DASHBOARD (blo_dashboard.html)
+========================================================= */
+.dashboard {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+}
+
+/* ===== HEADER ===== */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar h1 {
+    color: #1b5e20;
+    font-size: 26px;
+}
+
+.logout {
+    background: #c62828;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.logout:hover {
+    background: #8e0000;
+}
+
+/* ===== BOOTH INFO ===== */
+#boothInfo {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* ===== ACTION BAR ===== */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.actions input {
+    flex: 1;
+}
+
+/* ===== TABLE ===== */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #1976d2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+td[contenteditable] {
+    background: #f1f8e9;
+}
+
+/* ===== TABLE BUTTONS ===== */
+td button {
+    padding: 6px 10px;
+    margin: 0 2px;
+    border-radius: 4px;
+}
+
+td button:first-child {
+    background: #2e7d32;
+    color: white;
+}
+
+td button:last-child {
+    background: #c62828;
+    color: white;
+}
+
+/* ===== EMPTY STATE ===== */
+table td[colspan] {
+    padding: 15px;
+    color: #777;
+}
+
+/* =========================================================
+   ADD VOTER MODAL
+========================================================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+}
+
+.modal-content {
+    background: white;
+    width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1b5e20;
+}
+
+.modal-content button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column;
+    }
+
+    .dashboard {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

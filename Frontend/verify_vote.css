@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vote-container {
+    background: white;
+    padding: 30px;
+    width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.vote-container h1 {
+    color: #1b5e20;
+}
+
+
+.vote-card {
+    margin-top: 20px;
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 6px solid #4caf50;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.row span {
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d47a1;
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.status.success {
+    color: #388e3c;
+}
+.camera {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}

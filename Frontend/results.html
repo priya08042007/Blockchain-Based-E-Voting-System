@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Election Results</title>
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #0b3c5d;
+            color: white;
+        }
+
+        .party-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+        <span class="nav-title">Election Commission</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="voting-control.html">Voting Control</a>
+        <a href="add-candidate.html">Add Candidate</a>
+        <a href="add-party.html">Add Party</a>
+        <a href="view-candidates.html">View Candidates</a>
+        <a href="view-party.html">View Parties</a>
+        <a href="results.html">Results</a>
+    </div>
+</nav>
+
+<div class="three-column-layout">
+
+    <!-- 🔹 LEFT PANEL: RESULT INFORMATION -->
+    <aside class="panel info-panel">
+        <h2>Election Results Overview</h2>
+
+        <p>
+            The election results panel displays the final vote count
+            for each candidate based on booth-wise voting data.
+        </p>
+
+        <h3>How Results Are Calculated</h3>
+        <ul>
+            <li>Votes are recorded securely on the blockchain</li>
+            <li>Each vote is immutable and tamper-proof</li>
+            <li>Counting is fully automated and transparent</li>
+        </ul>
+
+        <h3>Booth-Based Results</h3>
+        <p>
+            Administrators can view results booth-wise by entering
+            a valid Booth ID. This helps in localized verification
+            and auditing.
+        </p>
+
+        <h3>Transparency & Integrity</h3>
+        <p>
+            Since all votes are stored on blockchain, results cannot
+            be altered once voting ends, ensuring fair elections.
+        </p>
+
+        <h3>Admin Responsibility</h3>
+        <p>
+            The admin monitors result declaration and ensures
+            accurate, unbiased publication of election outcomes.
+        </p>
+    </aside>
+
+    <!-- 🔹 CENTER PANEL: RESULTS TABLE -->
+    <main class="panel main-panel">
+
+        <h2>Election Results</h2>
+
+        <p id="wallet-status" class="wallet-status">Checking wallet...</p>
+
+        <div id="resultsControls">
+            <input id="searchBoothId" placeholder="Enter Booth ID">
+            <button onclick="viewResults()">📊 View Results</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Party</th>
+                        <th>Symbol</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTableBody"></tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- 🔹 RIGHT PANEL: SAME AS OTHER PAGES -->
+    <aside class="panel links-panel">
+        <h2>Important Voting Links</h2>
+
+        <ul class="links-list">
+            <li><a href="https://eci.gov.in" target="_blank">Election Commission of India</a></li>
+            <li><a href="https://voterportal.eci.gov.in" target="_blank">Voter Registration Portal</a></li>
+            <li><a href="https://nvsp.in" target="_blank">National Voters’ Service Portal</a></li>
+            <li><a href="https://eci.gov.in/faqs" target="_blank">Voting Rules & FAQs</a></li>
+            <li><a href="https://eci.gov.in/complaint" target="_blank">Voter Grievance Redressal</a></li>
+        </ul>
+
+        <h3>Why These Links?</h3>
+        <p>
+            These official portals provide verified and legally
+            accurate election-related information.
+        </p>
+    </aside>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

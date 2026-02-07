@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+            <span class="nav-title">Election Commission</span>
+        </div>
+    </nav>
+
+    <!-- 🔁 Image Slider -->
+    <div class="slider">
+        <div class="slide-track">
+            <img src="images/vote1.png">
+            <img src="images/vote2.png">
+            <img src="images/vote3.png">
+            <img src="images/vote4.png">
+
+            <img src="images/vote1.png">
+            <img src="images/vote2.png">
+            <img src="images/vote3.png">
+            <img src="images/vote4.png">
+        </div>
+    </div>
+
+    <!-- ⭐ Info Strip -->
+    <div class="info-strip">
+        <div class="info-card">
+            <img src="images/secure.png">
+            <p><b>Secure Voting</b><br>Blockchain Protected</p>
+        </div>
+
+        <div class="info-card">
+            <img src="images/face.png">
+            <p><b>Face Authentication</b><br>AI Powered</p>
+        </div>
+
+        <div class="info-card">
+            <img src="images/verified.png">
+            <p><b>Verified Voters</b><br>EPIC Validation</p>
+        </div>
+    </div>
+
+    <!-- 🗳️ Main Container -->
+    <div class="container">
+        <h1>🗳️ Secure Voting Portal</h1>
+        <p class="subtitle">Your Vote, Your Voice</p>
+
+        <div id="epic-section">
+            <label for="epic">Enter EPIC:</label><br>
+            <input type="text" id="epic" placeholder="Enter EPIC Number">
+            <br>
+            <button onclick="verifyEpic()">Verify EPIC</button>
+            <p id="epic-error" class="error"></p>
+        </div>
+
+        <!-- <button onclick="getVoters()">Fetch Voters</button> -->
+
+        <div id="camera-section" style="display:none; margin-top:20px;">
+            <h3>Face Authentication</h3>
+
+            <div class="camera-wrapper">
+                <img id="cameraFeed" src="" alt="Camera Feed">
+
+                <div class="camera-buttons">
+                    <button id="startFaceBtn" onclick="startFaceDetection()">Start Face Detection</button>
+                    <button id="stopFaceBtn" onclick="stopFaceDetection()">Stop Face Detection</button>
+                </div>
+            </div>
+
+            <p id="camera-error" class="error"></p>
+        </div>
+
+
+        <button id="voteButton" onclick="goToVotePage()" style="display:none; margin-top:20px;">Vote Now</button>
+
+        <div id="votingContainer" style="margin-top:20px;"></div>
+
+
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

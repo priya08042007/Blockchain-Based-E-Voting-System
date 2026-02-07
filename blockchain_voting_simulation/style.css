@@ -1,0 +1,221 @@
+:root {
+    --bg-color: #f0f2f5;
+    --panel-bg: #ffffff;
+    --primary-color: #2563eb;
+    --admin-color: #4f46e5;
+    --voter-color: #059669;
+    --terminal-bg: #1e1e1e;
+    --terminal-text: #33ff33;
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    height: 100vh;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.panel {
+    flex: 1;
+    background: var(--panel-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* LEFT PANEL STYLES */
+.role-section {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.admin-section {
+    border-left: 5px solid var(--admin-color);
+}
+
+.voter-section {
+    border-left: 5px solid var(--voter-color);
+}
+
+.role-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-danger { background-color: #dc2626; color: white; }
+.btn-vote { background-color: var(--voter-color); color: white; width: 100%; font-size: 1.1rem; }
+
+.btn-primary:hover:not(:disabled) { background-color: #1d4ed8; }
+.btn-vote:hover:not(:disabled) { background-color: #047857; }
+
+#status-bar {
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.status-waiting { background-color: #ffedd5; color: #9a3412; }
+.status-active { background-color: #d1fae5; color: #065f46; }
+.status-ended { background-color: #fee2e2; color: #991b1b; }
+
+.candidates-display ul {
+    list-style: none;
+}
+
+.candidates-display li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* RIGHT PANEL STYLES */
+.right-panel {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.right-panel header h1, .right-panel header p {
+    color: #eee;
+}
+
+.terminal {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-text);
+    font-family: 'Consolas', 'Monaco', monospace; /* Terminal font */
+    padding: 15px;
+    border-radius: 8px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.log-info { color: #60a5fa; }
+.log-success { color: #4ade80; }
+.log-warning { color: #fbbf24; }
+.log-hash { color: #a78bfa; font-size: 0.8rem;}
+
+.chain-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.block {
+    background: #444;
+    border: 1px solid #666;
+    padding: 10px;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.block::after {
+    content: '🔗';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}
+
+.block:last-child::after {
+    content: '';
+}
+
+.block.genesis {
+    background: #6366f1;
+    color: white;
+}

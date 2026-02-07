@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Candidate</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+    <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+    <span class="nav-title">Election Commission</span>
+</div>
+
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="voting-control.html">Voting Control</a>
+        <a href="add-candidate.html">Add Candidate</a>
+        <a href="add-party.html">Add Party</a>
+        <a href="view-candidates.html">View Candidates</a>
+        <a href="view-party.html">View Parties</a>
+        <a href="results.html">Results</a>
+    </div>
+</nav>
+
+<div class="three-column-layout">
+
+    <!-- 🔹 LEFT: ADD CANDIDATE INFORMATION -->
+    <aside class="panel info-panel">
+        <h2>About Candidates</h2>
+        <p>
+            Candidates are individuals who contest in elections to represent
+            voters in democratic institutions. Their details must be accurately
+            recorded to ensure a fair and transparent election process.
+        </p>
+
+        <h3>Purpose of Adding Candidates</h3>
+        <ul>
+            <li>Registers eligible contestants for the election</li>
+            <li>Ensures clear identification of candidates</li>
+            <li>Links candidates with their political parties</li>
+        </ul>
+
+        <h3>Candidate Verification</h3>
+        <p>
+            Before adding a candidate, their identity and eligibility must be
+            verified by the election administrator to prevent fraudulent entries.
+        </p>
+
+        <h3>Blockchain Record</h3>
+        <p>
+            Once added, candidate details are stored on the blockchain. This
+            ensures immutability and prevents unauthorized modification.
+        </p>
+
+        <h3>Polling Booth Mapping</h3>
+        <ul>
+            <li>Each candidate is associated with a polling booth</li>
+            <li>Ensures booth-wise vote allocation</li>
+            <li>Prevents misrouting of votes</li>
+        </ul>
+
+        <h3>Admin Responsibility</h3>
+        <p>
+            The administrator is responsible for maintaining accurate candidate
+            data. Incorrect entries may affect election results.
+        </p>
+    </aside>
+
+    <!-- 🔹 CENTER: ADD CANDIDATE FORM -->
+    <main class="panel main-panel">
+        <h2>Add Candidate</h2>
+
+        <p id="wallet-status" class="wallet-status">Checking wallet...</p>
+
+        <input id="boothId" placeholder="Polling Booth ID">
+        <input id="candidateId" placeholder="Candidate ID">
+        <input id="candidateName" placeholder="Candidate Name">
+
+        <select id="candidateParty">
+            <option value="">Select Party</option>
+        </select>
+
+        <button id="addCandidateBtn" onclick="addCandidate()">➕ Add Candidate</button>
+    </main>
+
+    <!-- 🔹 RIGHT: IMPORTANT VOTING LINKS (UNCHANGED) -->
+    <aside class="panel links-panel">
+        <h2>Important Voting Links</h2>
+
+        <ul class="links-list">
+            <li><a href="https://eci.gov.in" target="_blank">Election Commission of India</a></li>
+            <li><a href="https://voterportal.eci.gov.in" target="_blank">Voter Registration Portal</a></li>
+            <li><a href="https://nvsp.in" target="_blank">National Voters’ Service Portal</a></li>
+            <li><a href="https://eci.gov.in/faqs" target="_blank">Voting Rules & FAQs</a></li>
+            <li><a href="https://eci.gov.in/complaint" target="_blank">Voter Grievance Redressal</a></li>
+        </ul>
+
+        <h3>Why These Links?</h3>
+        <p>
+            These official resources help voters and administrators access
+            accurate election-related information.
+        </p>
+    </aside>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

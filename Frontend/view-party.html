@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Parties</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+            <span class="nav-title">Election Commission</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="voting-control.html">Voting Control</a>
+            <a href="add-candidate.html">Add Candidate</a>
+            <a href="add-party.html">Add Party</a>
+            <a href="view-candidates.html">View Candidates</a>
+            <a href="view-party.html">View Parties</a>
+            <a href="results.html">Results</a>
+        </div>
+    </nav>
+
+    <div class="three-column-layout">
+
+    <!-- 🔹 LEFT: PARTY INFORMATION (SAME AS ADD-PARTY) -->
+    <aside class="panel info-panel">
+        <h2>About Political Parties</h2>
+        <p>
+            Political parties are organized groups of individuals who share
+            common ideologies and contest elections to represent citizens
+            in legislative bodies.
+        </p>
+
+        <h3>Purpose of Party Registration</h3>
+        <ul>
+            <li>Registers recognized political parties</li>
+            <li>Ensures transparency during elections</li>
+            <li>Links candidates to party identity</li>
+        </ul>
+
+        <h3>Party Identity</h3>
+        <p>
+            Each party is uniquely identified by its name, leader, and logo,
+            enabling voters to easily recognize parties on the ballot.
+        </p>
+
+        <h3>Blockchain Storage</h3>
+        <p>
+            Party details are stored securely on the blockchain, making them
+            immutable and tamper-proof.
+        </p>
+
+        <h3>Administrative Responsibility</h3>
+        <p>
+            The administrator ensures that only verified parties are listed
+            to maintain election integrity.
+        </p>
+    </aside>
+
+    <!-- 🔹 CENTER: VIEW PARTIES -->
+    <main class="panel main-panel">
+        <h2>🎉 Party List</h2>
+
+        <p id="wallet-status" class="wallet-status">Checking wallet...</p>
+
+        <div id="partyList" class="party-list">
+            <!-- Party cards will be injected here -->
+        </div>
+    </main>
+
+    <!-- 🔹 RIGHT: IMPORTANT VOTING LINKS (SAME AS ADD-PARTY) -->
+    <aside class="panel links-panel">
+        <h2>Important Voting Links</h2>
+
+        <ul class="links-list">
+            <li><a href="https://eci.gov.in" target="_blank">Election Commission of India</a></li>
+            <li><a href="https://voterportal.eci.gov.in" target="_blank">Voter Registration Portal</a></li>
+            <li><a href="https://nvsp.in" target="_blank">National Voters’ Service Portal</a></li>
+            <li><a href="https://eci.gov.in/faqs" target="_blank">Voting Rules & FAQs</a></li>
+            <li><a href="https://eci.gov.in/complaint" target="_blank">Voter Grievance Redressal</a></li>
+        </ul>
+
+        <h3>Why These Links?</h3>
+        <p>
+            Official election resources ensure accurate, verified, and
+            legally valid information.
+        </p>
+    </aside>
+
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        async function loadParties() {
+            const partyListDiv = document.getElementById("partyList");
+            const status = document.getElementById("wallet-status");
+
+            partyListDiv.innerHTML = "Loading parties...";
+
+            try {
+                // Ensure wallet is connected
+                if (!ecContract) {
+                    if (status) status.innerText = "🔄 Connecting wallet...";
+                    await connectWallet();
+                }
+
+                if (!ecContract) throw new Error("Contract not initialized");
+
+                // fetch all parties from contract
+                const result = await ecContract.getAllParties();
+                const ids = result[0];
+                const names = result[1];
+                const leaders = result[2];
+                const descs = result[3];
+                const logos = result[4];
+
+                if (ids.length === 0) {
+                    partyListDiv.innerHTML = "<p>No parties found.</p>";
+                    return;
+                }
+
+                let html = "";
+                for (let i = 0; i < ids.length; i++) {
+                    html += `
+        <div class="party-card">
+            <img src="${logos[i]}" alt="${names[i]} Logo" class="party-logo">
+            <div class="party-info">
+                <h3>${names[i]}</h3>
+                <p><b>Leader:</b> ${leaders[i]}</p>
+                <p><b>Description:</b> ${descs[i]}</p>
+                <button class="danger" onclick="removeParty(${ids[i]})">
+                    🗑️ Delete
+                </button>
+            </div>
+        </div>
+    `;
+                }
+
+
+                partyListDiv.innerHTML = html;
+                if (status) status.innerText = "🟢 Wallet Connected";
+
+            } catch (err) {
+                console.error(err);
+                partyListDiv.innerHTML = "<p style='color:red;'>Failed to load parties.</p>";
+                if (status) status.innerText = "❌ Wallet/Contract Error";
+            }
+        }
+
+        // Load parties on page load
+        window.addEventListener("load", loadParties);
+    </script>
+
+</body>
+
+</html>

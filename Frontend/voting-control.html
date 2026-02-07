@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Control</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+        <span class="nav-title">Election Commission</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="voting-control.html">Voting Control</a>
+        <a href="add-candidate.html">Add Candidate</a>
+        <a href="add-party.html">Add Party</a>
+        <a href="view-candidates.html">View Candidates</a>
+        <a href="view-party.html">View Parties</a>
+        <a href="results.html">Results</a>
+    </div>
+</nav>
+
+<div class="three-column-layout">
+
+    <!-- 🔹 LEFT: VOTING INFORMATION -->
+    <aside class="panel info-panel">
+    <h2>About Voting</h2>
+    <p>
+        Voting is the cornerstone of a democratic society. It provides citizens
+        with the right and responsibility to choose their representatives and
+        influence public decision-making.
+    </p>
+
+    <h3>Importance of Voting</h3>
+    <ul>
+        <li>Ensures citizen participation in governance</li>
+        <li>Strengthens democratic legitimacy</li>
+        <li>Holds elected representatives accountable</li>
+    </ul>
+
+    <h3>Blockchain-Based Voting</h3>
+    <p>
+        Blockchain technology ensures decentralization, immutability, and
+        transparency. Every vote is recorded as a transaction and secured using
+        cryptographic hashing.
+    </p>
+
+    <h3>Security Features</h3>
+    <ul>
+        <li>End-to-end encryption of votes</li>
+        <li>Immutable ledger prevents tampering</li>
+        <li>Eliminates duplicate or fake votes</li>
+    </ul>
+
+    <h3>Voter Privacy</h3>
+    <p>
+        Voter identity is separated from vote data. While votes are verifiable,
+        voter anonymity is strictly preserved.
+    </p>
+
+    <h3>Auditability</h3>
+    <p>
+        Election authorities and auditors can verify vote counts without
+        accessing voter identities, ensuring transparency and trust.
+    </p>
+
+    <h3>Remote & Inclusive Voting</h3>
+    <ul>
+        <li>Enables participation for migrants</li>
+        <li>Accessible to elderly and disabled voters</li>
+        <li>Reduces dependency on physical polling booths</li>
+    </ul>
+</aside>
+
+
+    <!-- 🔹 CENTER: MAIN VOTING CONTROL -->
+    <main class="panel main-panel">
+        <h2>Voting Control</h2>
+
+        <p id="wallet-status" class="wallet-status">
+            🟢 Wallet Connected
+        </p>
+
+        <div class="status-box">
+            <h3>Voting Status:</h3>
+            <p id="votingStatus" class="active-status">
+                🟢 Voting is ACTIVE
+            </p>
+        </div>
+
+        <button onclick="startVoting()">▶ Start Voting</button>
+        <button class="danger" onclick="endVoting()">⛔ Stop Voting</button>
+    </main>
+
+    <!-- 🔹 RIGHT: IMPORTANT LINKS -->
+    <aside class="panel links-panel">
+    <h2>Important Voting Links</h2>
+
+    <ul class="links-list">
+        <li><a href="https://eci.gov.in" target="_blank">Election Commission of India (ECI)</a></li>
+        <li><a href="https://voterportal.eci.gov.in" target="_blank">Voter Registration Portal</a></li>
+        <li><a href="https://nvsp.in" target="_blank">National Voters’ Service Portal</a></li>
+        <li><a href="https://eci.gov.in/faqs" target="_blank">Voting Rules & FAQs</a></li>
+        <li><a href="https://eci.gov.in/complaint" target="_blank">Voter Grievance Redressal</a></li>
+    </ul>
+
+    <h3>Voter Awareness</h3>
+    <ul>
+        <li>Know your voting rights</li>
+        <li>Understand election guidelines</li>
+        <li>Learn ethical voting practices</li>
+    </ul>
+
+    <h3>Election Guidelines</h3>
+    <p>
+        These official resources provide information about eligibility criteria,
+        voting procedures, code of conduct, and election schedules.
+    </p>
+
+    <h3>Help & Support</h3>
+    <ul>
+        <li>Helpline for voter registration issues</li>
+        <li>Assistance for first-time voters</li>
+        <li>Support for differently-abled voters</li>
+    </ul>
+
+    <h3>Why Use Official Sources?</h3>
+    <p>
+        Official Election Commission resources ensure accurate, verified, and
+        legally correct information related to voting and elections.
+    </p>
+</aside>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+<script src="admin.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+    if (typeof checkVotingStatus === "function") {
+        checkVotingStatus();
+    }
+});
+</script>
+
+</body>
+</html>

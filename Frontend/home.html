@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+    <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+    <span class="nav-title">Election Commission</span>
+</div>
+
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="voting-control.html">Voting Control</a>
+        <a href="add-candidate.html">Add Candidate</a>
+        <a href="add-party.html">Add Party</a>
+        <a href="view-candidates.html">View Candidates</a>
+        <a href="view-party.html">View Parties</a>
+        <a href="results.html">Results</a>
+    </div>
+</nav>
+
+<!-- IMAGE SLIDER -->
+<section class="slider">
+    <div class="slides">
+        <img src="images/vote1.png" alt="Election Slide 1">
+        <img src="images/vote2.png" alt="Election Slide 2">
+        <img src="images/vote3.png" alt="Election Slide 3">
+        <img src="images/vote4.png" alt="Election Slide 4">
+
+        <img src="images/vote1.png" alt="Election Slide 1">
+        <img src="images/vote2.png" alt="Election Slide 2">
+        <img src="images/vote3.png" alt="Election Slide 3">
+        <img src="images/vote4.png" alt="Election Slide 4">
+
+    </div>
+    <div class="slider-overlay">
+    <h2>Free • Fair • Transparent Elections</h2>
+</div>
+
+</section>
+
+<section class="info-strip">
+    <div class="info-card">🛡️ Secure Voting</div>
+    <div class="info-card">⛓️ Blockchain Based</div>
+    <div class="info-card">📊 Real-time Results</div>
+</section>
+
+<section class="container">
+    <h2>Admin Wallet</h2>
+
+    <p id="wallet-status">Wallet not connected</p>
+
+    <button id="connectBtn" onclick="connectWallet()">🔗 Connect Wallet</button>
+    <button id="disconnectBtn" onclick="disconnectWallet()" style="display:none;" class="danger">
+        ❌ Disconnect Wallet
+    </button>
+    <button onclick="resetFaceCache()">Reset Voting Face Cache</button>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

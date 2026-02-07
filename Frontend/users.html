@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voter Login Portal</title>
+    <link rel="stylesheet" href="users.css">
+</head>
+
+<body>
+
+    <!-- Link to the Blockchain Simulation -->
+    <div style="text-align: center;">
+        <a href="../blockchain_voting_simulation/index.html" style="text-decoration: none;">
+            <button
+                style="width: auto; background-color: #ff9800; color: white; padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s;">
+                🔍 Check how Block-Chain Based Voting System works
+            </button>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>🗳️ Voter Verification</h1>
+        <p class="subtitle">Login using EPIC ID or Mobile Number</p>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('epicBox')">EPIC ID</button>
+            <button class="tab" onclick="showTab('mobileBox')">Mobile</button>
+        </div>
+
+        <!-- EPIC Login -->
+        <div id="epicBox" class="tab-content">
+            <label>EPIC ID</label>
+            <input type="text" id="epicInput" placeholder="Enter EPIC ID">
+
+            <!-- CAPTCHA -->
+            <div class="captcha">
+                <span id="epicCaptchaQ"></span>
+                <button type="button" class="refresh" onclick="generateCaptcha('epic')">🔄</button>
+                <input type="text" id="epicCaptchaA" placeholder="Enter CAPTCHA">
+            </div>
+
+            <button onclick="loginByEpic()">Verify</button>
+        </div>
+
+
+        <!-- Mobile Login -->
+        <div id="mobileBox" class="tab-content hidden">
+            <label>Mobile Number</label>
+            <input type="text" id="mobileInput" placeholder="Enter Mobile Number">
+
+            <!-- CAPTCHA -->
+            <div class="captcha">
+                <span id="mobileCaptchaQ"></span>
+                <button type="button" class="refresh" onclick="generateCaptcha('mobile')">🔄</button>
+                <input type="text" id="mobileCaptchaA" placeholder="Enter CAPTCHA">
+            </div>
+
+            <button onclick="sendOTP()">Send OTP</button>
+        </div>
+
+
+        <!-- OTP -->
+        <div id="otpBox" class="hidden">
+            <label>Enter OTP</label>
+            <input type="text" id="otpInput" placeholder="Enter OTP">
+            <button onclick="verifyOTP()">Verify OTP</button>
+        </div>
+
+        <!-- RESULT -->
+        <div id="result" class="hidden">
+            <div class="voter-card">
+                <h2>🧑‍💼 Voter Profile</h2>
+
+                <div class="field"><span>Name</span><input id="nameField" disabled></div>
+                <div class="field"><span>Age</span><input id="ageField" disabled></div>
+                <div class="field"><span>Mobile</span><input id="mobileField" disabled></div>
+                <div class="field readonly"><span>EPIC ID</span><input id="epicField" disabled></div>
+                <div class="field readonly"><span>Gender</span><input id="genderField" disabled></div>
+                <div class="field readonly"><span>Assembly</span><input id="assemblyField" disabled></div>
+                <div class="field readonly"><span>Polling Station</span><input id="pollingField" disabled></div>
+                <div class="field readonly"><span>State</span><input id="stateField" disabled></div>
+                <div class="field readonly"><span>District</span><input id="districtField" disabled></div>
+
+                <div class="buttons">
+                    <button id="editBtn" onclick="enableEdit()">✏️ Edit Details</button>
+                    <button id="submitBtn" class="hidden" onclick="submitEdit()">📤 Request BLO Approval</button>
+                    <input type="hidden" id="boothId">
+                </div>
+                <!-- VERIFY VOTE SECTION -->
+                <div class="verify-section">
+                    <h3>🗳️ Verify Your Vote</h3>
+                    <p>Check which candidate and party you voted for</p>
+                    <button onclick="goToVerifyVote()">Verify Vote</button>
+                </div>
+
+                <p id="statusMsg" class="status"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="users.js"></script>
+</body>
+
+</html>

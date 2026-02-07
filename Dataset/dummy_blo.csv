@@ -1,0 +1,11 @@
+BLO_ID,Name,Gender,Age,Mobile_Number,Email,Designation,Polling_Booth_ID,Assembly_Constituency,State,District
+BLO1001,Rajesh Kumar,Male,45,9876543210,rajesh.kumar@eci.gov.in,Booth Level Officer,PB-1001,Pune Central,Maharashtra,Pune
+BLO1002,Sunita Sharma,Female,42,9123456780,sunita.sharma@eci.gov.in,Booth Level Officer,PB-1002,Lucknow West,Uttar Pradesh,Lucknow
+BLO1003,Anil Verma,Male,50,9988776655,anil.verma@eci.gov.in,Booth Level Officer,PB-1003,Ahmedabad East,Gujarat,Ahmedabad
+BLO1004,Kavita Nair,Female,38,9090909090,kavita.nair@eci.gov.in,Booth Level Officer,PB-1004,New Delhi,Delhi,New Delhi
+BLO1005,Suresh Reddy,Male,47,9012345678,suresh.reddy@eci.gov.in,Booth Level Officer,PB-1005,Mylapore,Tamil Nadu,Chennai
+BLO1006,Meena Das,Female,44,9345678123,meena.das@eci.gov.in,Booth Level Officer,PB-1006,Jadavpur,West Bengal,Kolkata
+BLO1007,Prakash Singh,Male,52,9876501234,prakash.singh@eci.gov.in,Booth Level Officer,PB-1007,Patna Sahib,Bihar,Patna
+BLO1008,Anita Choudhary,Female,40,9765432109,anita.choudhary@eci.gov.in,Booth Level Officer,PB-1008,Jaipur North,Rajasthan,Jaipur
+BLO1009,Mohammed Salim,Male,48,9654321098,mohammed.salim@eci.gov.in,Booth Level Officer,PB-1009,Vattiyoorkavu,Kerala,Thiruvananthapuram
+BLO1010,Pooja Kulkarni,Female,36,9898989898,pooja.kulkarni@eci.gov.in,Booth Level Officer,PB-1010,Nagpur South,Maharashtra,Nagpur

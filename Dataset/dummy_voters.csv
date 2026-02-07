@@ -1,0 +1,4 @@
+EPIC_ID,Name,Gender,Age,Phone_Number,Relation,Assembly_Constituency,Polling_Station_Name,Polling_Booth_ID,Part_Number,Serial_Number,State,District
+UUL9091626,Amit Sharma,Male,24,+919699630928,Fatima Patel (Wife),Pune Central,"Govt High School, Model Colony",PB-1001,34,279,Maharashtra,Pune
+JHF3065597,Neha Rathore,Female,63,+918379004369,Vikram Devi (Guardian),Lucknow West,"Community Hall, Aliganj",PB-1001,26,262,Uttar Pradesh,Lucknow
+OIY3648449,Ramesh Kumar,Male,46,+919309253785,Suresh Sharma (Spouse),Bengaluru South,"Kendriya Vidyalaya, Jayanagar",PB-1001,2,167,Karnataka,Bengaluru Urban

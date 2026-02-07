@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Party</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+    <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+    <span class="nav-title">Election Commission</span>
+</div>
+
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="voting-control.html">Voting Control</a>
+        <a href="add-candidate.html">Add Candidate</a>
+        <a href="add-party.html">Add Party</a>
+        <a href="view-candidates.html">View Candidates</a>
+        <a href="view-party.html">View Parties</a>
+        <a href="results.html">Results</a>
+    </div>
+</nav>
+
+<!-- MAIN CONTAINER -->
+<div class="three-column-layout">
+
+    <!-- 🔹 LEFT: ADD PARTY INFORMATION -->
+    <aside class="panel info-panel">
+        <h2>About Political Parties</h2>
+        <p>
+            Political parties are organized groups of individuals who share
+            common ideologies and contest elections to form governments or
+            represent citizens in legislative bodies.
+        </p>
+
+        <h3>Purpose of Adding Parties</h3>
+        <ul>
+            <li>Registers recognized political parties</li>
+            <li>Links candidates with party identity</li>
+            <li>Ensures clarity during voting and result display</li>
+        </ul>
+
+        <h3>Party Identity</h3>
+        <p>
+            Each party is uniquely identified by its name, leader, and logo.
+            This identity helps voters easily recognize parties on the ballot.
+        </p>
+
+        <h3>Blockchain Registration</h3>
+        <p>
+            Party details are securely stored on the blockchain, ensuring
+            immutability and preventing unauthorized changes.
+        </p>
+
+        <h3>Role of Party Logo</h3>
+        <ul>
+            <li>Helps voters visually identify parties</li>
+            <li>Improves accessibility for less-literate voters</li>
+            <li>Displayed during voting and result declaration</li>
+        </ul>
+
+        <h3>Admin Responsibility</h3>
+        <p>
+            The administrator must ensure that party information is accurate
+            and verified before registration to maintain election integrity.
+        </p>
+    </aside>
+
+    <!-- 🔹 CENTER: ADD PARTY FORM -->
+    <main class="panel main-panel">
+        <h2>Add Political Party</h2>
+
+        <p id="wallet-status" class="wallet-status">Checking wallet...</p>
+
+        <input type="text" id="partyName" placeholder="Party Name">
+        <input type="text" id="partyLeader" placeholder="Party Leader Name">
+
+        <textarea id="partyDesc" placeholder="Party Description"
+            style="width:100%; margin-top:12px; padding:12px; border-radius:8px; border:1px solid #ccc;">
+        </textarea>
+
+        <label style="margin-top:14px; display:block; font-weight:500;">
+            Party Logo
+        </label>
+        <input type="file" id="partyLogo" accept="image/*" onchange="previewLogo()">
+
+        <div style="text-align:center; margin-top:14px;">
+            <img id="logoPreview"
+                 src=""
+                 style="display:none; width:120px; height:120px; border-radius:50%;
+                        object-fit:cover; border:2px solid #0b3c5d;">
+        </div>
+
+        <button onclick="addParty()">➕ Add Party</button>
+    </main>
+
+    <!-- 🔹 RIGHT: IMPORTANT VOTING LINKS (UNCHANGED) -->
+    <aside class="panel links-panel">
+        <h2>Important Voting Links</h2>
+
+        <ul class="links-list">
+            <li><a href="https://eci.gov.in" target="_blank">Election Commission of India</a></li>
+            <li><a href="https://voterportal.eci.gov.in" target="_blank">Voter Registration Portal</a></li>
+            <li><a href="https://nvsp.in" target="_blank">National Voters’ Service Portal</a></li>
+            <li><a href="https://eci.gov.in/faqs" target="_blank">Voting Rules & FAQs</a></li>
+            <li><a href="https://eci.gov.in/complaint" target="_blank">Voter Grievance Redressal</a></li>
+        </ul>
+
+        <h3>Why These Links?</h3>
+        <p>
+            Official election resources provide accurate and legally valid
+            information for administrators, candidates, and voters.
+        </p>
+    </aside>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+<script src="admin.js"></script>
+<script src="add-party.js"></script>
+</body>
+</html>

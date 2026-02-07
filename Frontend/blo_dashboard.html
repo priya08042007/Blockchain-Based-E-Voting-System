@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BLO Dashboard</title>
+    <link rel="stylesheet" href="BLO.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <div class="top-bar">
+            <h1>🧑‍💼 BLO Dashboard</h1>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+
+        <p id="boothInfo"></p>
+
+        <div class="actions">
+            <input id="searchEpic" placeholder="Search by EPIC ID">
+            <button onclick="searchVoter()">🔍 Search</button>
+            <button onclick="loadVoters()">📋 View All Booth Voters</button>
+            <button onclick="openAddForm()">➕ Add New Voter</button>
+            <button onclick="loadApprovals()">✅ Pending Approvals</button>
+
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>EPIC</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Mobile</th>
+                        <th>Relation</th>
+                        <th>Assembly</th>
+                        <th>Station</th>
+                        <th>Booth</th>
+                        <th>Part</th>
+                        <th>Serial</th>
+                        <th>State</th>
+                        <th>District</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="voterTable"></tbody>
+            </table>
+            <h2>🕒 Pending Edit Requests</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>EPIC</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Mobile</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="approvalTable"></tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- ADD VOTER MODAL -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Voter</h2>
+
+            <input id="EPIC_ID" placeholder="EPIC ID">
+            <input id="Name" placeholder="Name">
+            <input id="Gender" placeholder="Gender">
+            <input id="Age" placeholder="Age">
+            <input id="Phone_Number" placeholder="Mobile">
+            <input id="Relation" placeholder="Relation">
+            <input id="Assembly_Constituency" placeholder="Assembly Constituency">
+            <input id="Polling_Station_Name" placeholder="Polling Station Name">
+            <input id="Part_Number" placeholder="Part Number">
+            <input id="Serial_Number" placeholder="Serial Number">
+            <input id="State" placeholder="State">
+            <input id="District" placeholder="District">
+
+            <button onclick="addVoter()">✅ Save</button>
+            <button class="logout" onclick="closeAddForm()">❌ Cancel</button>
+        </div>
+    </div>
+
+
+    <script src="BLO.js"></script>
+</body>
+
+</html>

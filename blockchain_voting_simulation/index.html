@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Voting Simulation</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- LEFT PANEL: FRONTEND ACTIONS -->
+        <div class="panel left-panel">
+            <header>
+                <h1><i class="fas fa-vote-yea"></i> E-Voting UI</h1>
+                <p>Frontend User Interface</p>
+            </header>
+
+            <!-- STATUS BAR -->
+            <div id="status-bar" class="status-waiting">Status: Election Not Started</div>
+
+            <!-- SECTION 1: ELECTION COMMISSION -->
+            <section class="role-section admin-section">
+                <h2><i class="fas fa-user-shield"></i> Election Commission</h2>
+                
+                <div class="control-group">
+                    <label>Add Candidate / Party</label>
+                    <div class="input-group">
+                        <input type="text" id="candidateName" placeholder="Candidate Name (e.g., Alice)">
+                        <input type="text" id="partyName" placeholder="Party (e.g., BlockParty)">
+                        <button onclick="addCandidate()">Add Candidate</button>
+                    </div>
+                </div>
+
+                <div class="control-group buttons-row">
+                    <button id="startBtn" class="btn-primary" onclick="startElection()">Start Election</button>
+                    <button id="endBtn" class="btn-danger" onclick="endElection()" disabled>End Election</button>
+                </div>
+            </section>
+
+            <!-- SECTION 2: VOTER -->
+            <section class="role-section voter-section">
+                <h2><i class="fas fa-user"></i> Voter Portal</h2>
+                
+                <div class="control-group">
+                    <label>Voter Identity</label>
+                    <input type="text" id="voterId" placeholder="Enter your Voter ID (e.g., V-101)">
+                </div>
+
+                <div class="control-group">
+                    <label>Select Candidate</label>
+                    <select id="candidateSelect">
+                        <option value="" disabled selected>-- Select a Candidate --</option>
+                    </select>
+                </div>
+
+                <button id="voteBtn" class="btn-vote" onclick="castVote()" disabled>VOTE NOW</button>
+            </section>
+
+            <!-- CANDIDATE LIST DISPLAY -->
+            <section class="candidates-display">
+                <h3>Live Results (from Blockchain)</h3>
+                <ul id="candidatesList">
+                    <!-- Candidates will be populated here -->
+                </ul>
+            </section>
+        </div>
+
+        <!-- RIGHT PANEL: BACKEND BLOCKCHAIN LOGS -->
+        <div class="panel right-panel">
+            <header>
+                <h1><i class="fas fa-cubes"></i> Blockchain Internals</h1>
+                <p>Live Backend Process Log</p>
+            </header>
+            
+            <div id="terminal" class="terminal">
+                <div class="log-entry system">> Blockchain initialized...</div>
+                <div class="log-entry system">> Waiting for transaction...</div>
+            </div>
+
+            <div class="chain-visualizer">
+                <!-- Visual representation of blocks will appear here -->
+                <h3>Chain State:</h3>
+                <div id="chainContainer" class="chain-container">
+                    <div class="block genesis">GENESIS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="blockchain.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

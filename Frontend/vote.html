@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cast Your Vote</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <body>
+<nav class="navbar">
+    <div class="nav-left">
+    <img src="images/election-logo.png" alt="Election Commission Logo" class="nav-logo">
+    <span class="nav-title">Election Commission</span>
+</div>
+</nav>
+
+<div class="container">
+    <h1>🗳️ Candidate List</h1>
+    <p class="subtitle">Select one candidate and submit your vote</p>
+
+    <form id="voteForm">
+        <div id="candidateList"></div>
+
+        <button type="submit" id="submitVoteBtn" disabled>
+            Submit Vote
+        </button>
+    </form>
+</div>
+
+<script src="vote.js"></script>
+</body>
+</html>
